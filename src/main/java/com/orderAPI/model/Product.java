@@ -45,9 +45,7 @@ public class Product implements Serializable {
     @NotNull
     @Column(name = "product_value")
     private BigDecimal productValue;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "product")
-    private List<OrderData> orderDataList;
-
+    
     public Product() {
     }
 
@@ -83,15 +81,6 @@ public class Product implements Serializable {
 
     public void setProductValue(BigDecimal productValue) {
         this.productValue = productValue;
-    }
-
-    @XmlTransient
-    public List<OrderData> getOrderDataList() {
-        return orderDataList;
-    }
-
-    public void setOrderDataList(List<OrderData> orderDataList) {
-        this.orderDataList = orderDataList;
     }
 
     @Override
