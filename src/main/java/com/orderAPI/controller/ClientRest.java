@@ -45,8 +45,8 @@ public class ClientRest {
         return updatedClient;
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.DELETE)
-    public String deleteClient(@RequestParam int id) {
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public String deleteClient(@PathVariable int id) {
         try {
             clientService.deleteById(id);
             return "Cliente removido com sucesso!";
