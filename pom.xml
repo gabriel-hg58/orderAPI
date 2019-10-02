@@ -11,7 +11,7 @@
     
     <groupId>com.orderAPI</groupId>
     <artifactId>orderAPI</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3</version>
     
     <properties>
         <java.version>1.8</java.version>
@@ -51,6 +51,12 @@
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <scope>runtime</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+            <version>1.5.8.RELEASE</version>
         </dependency>
     </dependencies>
     
