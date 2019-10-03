@@ -2,6 +2,7 @@ package com.orderAPI.controller;
 
 import com.orderAPI.model.Product;
 import com.orderAPI.service.ProductService;
+import com.orderAPI.util.DeliveryQueueSender;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,9 @@ public class ProductRest {
 
     @Autowired
     private ProductService productService;
+    
+    @Autowired
+    private DeliveryQueueSender deliveryQueue;
 
     @RequestMapping(value = "/lista", method = RequestMethod.GET)
     public List<Product> productList() {

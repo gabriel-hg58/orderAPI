@@ -11,7 +11,7 @@
     
     <groupId>com.orderAPI</groupId>
     <artifactId>orderAPI</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
     
     <properties>
         <java.version>1.8</java.version>
@@ -56,7 +56,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
-            <version>1.5.8.RELEASE</version>
         </dependency>
     </dependencies>
     

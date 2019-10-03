@@ -7,14 +7,15 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class DeliveryQueueSender {
- 
+
     @Autowired
     private RabbitTemplate rabbitTemplate;
- 
+
     @Autowired
     private Queue queue;
-    
+
     public void send(String order) {
+        System.out.println("Mensagem enviada!");
         rabbitTemplate.convertAndSend(this.queue.getName(), order);
     }
 }
