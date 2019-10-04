@@ -5,7 +5,10 @@ import com.orderAPI.service.ProductService;
 import com.orderAPI.util.DeliveryQueueSender;
 import java.util.List;
 import java.util.Optional;
+import org.hibernate.annotations.common.util.impl.Log;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,6 +39,7 @@ public class ProductRest {
     public String addProduct(@RequestBody Product product) {
         try {
             Product savedProduct = productService.save(product);
+            deliveryQueue.send(product.toString());
             return "Produto salvo com sucesso!";
         } catch (Exception e) {
             return "Ocorreu um erro ao salvar o produto";
